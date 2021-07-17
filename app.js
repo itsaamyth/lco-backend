@@ -9,6 +9,7 @@ const cors = require('cors')
 // const stripe = require('stripe')
 
 //My routes
+const homeRoutes = require('./routes/home')
 const authRoutes = require('./routes/auth')
 const userRoutes = require('./routes/user')
 const categoryRoutes = require('./routes/category')
@@ -36,6 +37,7 @@ app.use(cookieParser())
 app.use(cors())
 
 //MY ROUTES
+app.use("/api",homeRoutes)
 app.use("/api",authRoutes)
 app.use("/api",userRoutes)
 app.use("/api",categoryRoutes)
